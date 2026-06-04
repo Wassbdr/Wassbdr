@@ -37,7 +37,6 @@ I build systems where ML meets production: root cause analysis in Kubernetes clu
 
 | Project | What it does | Tech |
 |---|---|---|
-| [NLP-2026](https://github.com/Wassbdr/NLP-2026) | Poisoned Teacher & Chain-of-Thought Distillation | Python, Transformers |
 | [gen_ai-diff_model](https://github.com/Wassbdr/gen_ai-diff_model) | Rectified Flow generative model on MNIST — straight-line ODE transport | PyTorch |
 | [twitter-sentiment-analysis](https://github.com/Wassbdr/twitter-sentiment-analysis) | 7-model benchmark: does Twitter sentiment predict stock moves? (DistilBERT F1=0.79) | Transformers, sklearn |
 
@@ -64,7 +63,7 @@ I build systems where ML meets production: root cause analysis in Kubernetes clu
 ## Stack
 
 ```
-Languages    Python · Rust · TypeScript · C · Go
+Languages    Python · TypeScript · C
 ML/AI        PyTorch · scikit-learn · Transformers · LangGraph · LlamaIndex
 Infra        Kubernetes · Docker · Prometheus · OpenTelemetry · MLflow
 Databases    Neo4j · ChromaDB · TimescaleDB · Firebase
