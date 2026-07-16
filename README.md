@@ -1,70 +1,54 @@
-# Wassim Badraoui
+```console
+$ whoami
+wassim badraoui / machine learning engineer / paris
 
-**AI Engineer · Distributed Systems · Medical AI · Voice AI**
-
-I build systems where ML meets production: root cause analysis in Kubernetes clusters, voice assistants that run locally, medical imaging pipelines, and tools that bridge the gap between research and deployment.
-
----
-
-## Featured Projects
-
-### Observability & Root Cause Analysis
-
-| Project | What it does | Tech |
-|---|---|---|
-| [matrix_simple](https://github.com/Wassbdr/matrix_simple) | Spatio-Temporal GNN for microservice fault localization — publication-grade reproducibility | PyTorch, GNN, K8s, MLflow |
-| [otel-sre-copilot](https://github.com/Wassbdr/otel-sre-copilot) | LLM agent that investigates K8s incidents via OTel metrics, traces & logs — evaluated vs 3 baselines | LangGraph, OTel, NVIDIA NIM |
-| [ewat](https://github.com/Wassbdr/ewat) | Early warning & anomaly typing in microservice architectures — drift detection before ontology learning | Python, Docker, K8s, MLflow |
-| [plague_inc](https://github.com/Wassbdr/plague_inc) | 4-agent system that *predicts* fault cascades and applies preemptive K8s remediation | PyTorch, Chaos Mesh, ST-GNN |
-
-### Medical & Healthcare AI
-
-| Project | What it does | Tech |
-|---|---|---|
-| [memento](https://github.com/Wassbdr/memento) | Voice-first memory assistant for Alzheimer patients — no buttons, personal memory graph | Whisper, Neo4j, TTS, LlamaIndex |
-| [arcad](https://github.com/Wassbdr/arcad) | Clinical decision support for rectal cancer treatment (Hackathon A.R.CA.D) | Python, Streamlit, Plotly |
-| [ct_visualizer](https://github.com/Wassbdr/ct_visualizer) | Interactive CT scan viewer with tumor/metastasis overlay | Python, tkinter, nibabel |
-
-### ML Engineering & Tooling
-
-| Project | What it does | Tech |
-|---|---|---|
-| [sklearn2c](https://github.com/Wassbdr/sklearn2c) | Transpiles trained sklearn models to dependency-free C — deploy ML on Arduino/STM32 | Python, C |
-| [mlops2](https://github.com/Wassbdr/mlops2) | Full MLOps pipeline: train → FastAPI → Docker → Docker Hub → SSH deploy to VM | FastAPI, Docker, GH Actions |
-| [prog_diff](https://github.com/Wassbdr/prog_diff) | PyTorch-style autodiff engine from scratch — Conv2d, BatchNorm, Adam, MNIST | Python, NumPy |
-
-### NLP & Generative AI
-
-| Project | What it does | Tech |
-|---|---|---|
-| [gen_ai-diff_model](https://github.com/Wassbdr/gen_ai-diff_model) | Rectified Flow generative model on MNIST — straight-line ODE transport | PyTorch |
-| [twitter-sentiment-analysis](https://github.com/Wassbdr/twitter-sentiment-analysis) | 7-model benchmark: does Twitter sentiment predict stock moves? (DistilBERT F1=0.79) | Transformers, sklearn |
-
-### Symbolic AI
-
-| Project | What it does | Tech |
-|---|---|---|
-| [abs_arg_dung](https://github.com/Wassbdr/abs_arg_dung) | Dung's Abstract Argumentation Framework — all 7 semantics, CLI, visualization, benchmarks | Python, TweetyProject |
-
-### Voice & Privacy
-
-| Project | What it does | Tech |
-|---|---|---|
-| [voicecall](https://github.com/Wassbdr/voicecall) | 100% local voice assistant — STT + LLM + TTS + voice cloning, zero data leaves the machine | Whisper, Ollama, OpenVoice |
-
-### Products
-
-| Project | What it does | Tech |
-|---|---|---|
-| [nousrire](https://github.com/Wassbdr/nousrire) | Live charity website [nousrire.org](https://nousrire.org) — food distribution association in Hauts-de-Seine | React, TypeScript, Firebase |
-
----
-
-## Stack
-
+$ cat /proc/self/status
+role      applied + research ML, with a systems habit
+now       AIOps research @ Devoteam, Kubernetes reliability
+before    Ministère des Armées (multimodal RAG), McKay Brothers (HFT, Rust)
+school    EPITA, MSc in AI & Machine Learning
+open to   first full-time role, available October 2026
 ```
-Languages    Python · TypeScript · C
-ML/AI        PyTorch · scikit-learn · Transformers · LangGraph · LlamaIndex
-Infra        Kubernetes · Docker · Prometheus · OpenTelemetry · MLflow
-Databases    Neo4j · ChromaDB · TimescaleDB · Firebase
-```
+
+I build ML systems and then make them survive contact with production. That usually means two jobs at once: getting the model to work, and getting it to answer in 13 ms on a real cluster that someone is trying to break with Chaos Mesh.
+
+The thing I care about most is knowing whether a result is real. My repos have a `limitations.md` and a section for the experiments that failed, because a number you cannot defend is worse than no number. When my root-cause model collapsed from 73% to 0%, I had a confident theory about which component broke. It took an A/B to prove me wrong: the culprit was numerical instability in the GIB loss.
+
+## Reliability & AIOps
+
+| Repo | What it is |
+|---|---|
+| [otel-sre-copilot](https://github.com/Wassbdr/otel-sre-copilot) | LangGraph agent that investigates Kubernetes incidents through OpenTelemetry (Prometheus, Tempo, Loki). Ships with a reproducible eval harness against 3 baselines, with Chaos Mesh as ground truth. The full benchmark run is still pending. |
+| [matrix_simple](https://github.com/Wassbdr/matrix_simple) | STA, spatio-temporal GNN for microservice root cause analysis. Selects k suspect nodes first, which drops the cost from O(N²) to O(N+k²). Latency stays flat as the graph grows. |
+| [ewat](https://github.com/Wassbdr/ewat) | Early warning and anomaly typing on K8s microservices. Separates benign drift from real anomalies, then learns a fault ontology via transfer entropy. Validated on a live 9-node RKE2 cluster. |
+| [slcmca](https://github.com/Wassbdr/slcmca) | slacheck. Answers "what SLA can I actually commit to?" for a multi-cloud microservice app, by walking the Datadog APM call graph and finding the critical path. Catches SLOs you promised but cannot hit. |
+| [mlops2](https://github.com/Wassbdr/mlops2) | End-to-end MLOps pipeline: scikit-learn to FastAPI to Docker to a VM, deployed by GitHub Actions. |
+
+## LLM & agents
+
+| Repo | What it is |
+|---|---|
+| [memento](https://github.com/Wassbdr/memento) | Voice-first memory assistant for Alzheimer patients. RAG plus a knowledge graph, no buttons and no screen, because the interface is the part patients cannot use. |
+| [voicecall](https://github.com/Wassbdr/voicecall) | Voice agent that runs entirely on your machine: faster-whisper, a local Ollama model, Edge TTS, OpenVoice cloning. No API call ever leaves the box. |
+| [arcad](https://github.com/Wassbdr/arcad) | PREDI-Care, multi-agent clinical decision support for rectal cancer strategy. Built at the A.R.CA.D hackathon. |
+
+## Systems & fundamentals
+
+| Repo | What it is |
+|---|---|
+| [sklearn2c](https://github.com/Wassbdr/sklearn2c) | Transpiles a trained scikit-learn model into dependency-free C, so it runs on an Arduino or an STM32. |
+| [abs_arg_dung](https://github.com/Wassbdr/abs_arg_dung) | Dung's abstract argumentation framework, all 7 semantics. Symbolic AI: given who attacks whom, graph theory decides which arguments survive. |
+| [prog_diff](https://github.com/Wassbdr/prog_diff) | An autodiff engine written from scratch in NumPy, up to Conv2d, BatchNorm and Adam. The way to learn what PyTorch does is to rebuild it. |
+| [ct_visualizer](https://github.com/Wassbdr/ct_visualizer) | 2D/3D CT viewer with segmentation overlays, built as a data-quality tool for the PINKCC ovarian cancer challenge, where our team finished 7th of 42. |
+
+## Elsewhere
+
+Contributor to open source AI infrastructure: a merged PR in [litellm](https://github.com/BerriAI/litellm), plus work on [dspy](https://github.com/stanfordnlp/dspy) and [opentelemetry-rust](https://github.com/open-telemetry/opentelemetry-rust).
+
+Also worth a look: a CUDA inference engine written from scratch that beats PyTorch on CNNs by roughly 4x, a 42sh POSIX shell in C, and research on whether a backdoor can survive knowledge distillation into a clean student model. Some of that lives in team or school repos.
+
+## Contact
+
+Looking for a first full-time ML engineering role in Paris, starting October 2026.
+
+[LinkedIn](https://www.linkedin.com/in/wassim-badraoui) · [wassim.badraoui@epita.fr](mailto:wassim.badraoui@epita.fr)
