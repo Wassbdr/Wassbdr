@@ -1,14 +1,14 @@
 ```console
-$ rca explain --incident 4271
+$ otel trace --service wassim-badraoui
 
-   frontend                        wassim badraoui
-      ├── cart ──────┐             machine learning engineer / paris
-      ├── checkout ──┤
-      └── catalog ───┤             now      AIOps research @ Devoteam
-                     │             before   Ministère des Armées, McKay Brothers
-                [ payment ]        school   EPITA, MSc AI & ML
-                     ^             open to  first full-time role, October 2026
-                 root cause
+  EPITA · MSc AI & ML         ████████████████████████████████
+  McKay Brothers · Rust, HFT                      ███
+  Ministère des Armées · RAG                         ██████
+  Devoteam · K8s AIOps                                      ███
+                                2022          2024         2026
+
+  wassim badraoui · machine learning engineer · paris
+  three roles back to back since 2024. next span opens october 2026.
 ```
 
 I build ML systems and make them survive production. Lately that means Kubernetes reliability: predicting failures, finding root causes, and proving the model actually works on a real cluster.
