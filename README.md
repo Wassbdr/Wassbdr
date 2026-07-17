@@ -1,15 +1,8 @@
-```console
-$ otel trace --service wassim-badraoui
-
-  EPITA · MSc AI & ML         ████████████████████████████████
-  McKay Brothers · Rust, HFT                      ███
-  Ministère des Armées · RAG                         ██████
-  Devoteam · K8s AIOps                                      ███
-                                2022          2024         2026
-
-  wassim badraoui · machine learning engineer · paris
-  three roles back to back since 2024. next span opens october 2026.
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Wassbdr/Wassbdr/master/trace-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Wassbdr/Wassbdr/master/trace-light.svg">
+  <img alt="Career timeline of Wassim Badraoui rendered as a distributed trace: EPITA MSc AI and ML from 2021 to 2026, McKay Brothers 6 months from 2024, Ministère des Armées 11 months from 2025, Devoteam 7 months in 2026." src="https://raw.githubusercontent.com/Wassbdr/Wassbdr/master/trace-light.svg">
+</picture>
 
 I build ML systems and make them survive production. Lately that means Kubernetes reliability: predicting failures, finding root causes, and proving the model actually works on a real cluster.
 
