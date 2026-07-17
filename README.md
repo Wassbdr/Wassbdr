@@ -1,18 +1,19 @@
 ```console
-$ whoami
-wassim badraoui / machine learning engineer / paris
+$ rca explain --incident 4271
 
-$ cat /proc/self/status
-role      applied + research ML, with a systems habit
-now       AIOps research @ Devoteam, Kubernetes reliability
-before    Ministère des Armées (multimodal RAG), McKay Brothers (HFT, Rust)
-school    EPITA, MSc in AI & Machine Learning
-open to   first full-time role, available October 2026
+   frontend                        wassim badraoui
+      ├── cart ──────┐             machine learning engineer / paris
+      ├── checkout ──┤
+      └── catalog ───┤             now      AIOps research @ Devoteam
+                     │             before   Ministère des Armées, McKay Brothers
+                [ payment ]        school   EPITA, MSc AI & ML
+                     ^             open to  first full-time role, October 2026
+                 root cause
 ```
 
-I build ML systems and then make them survive contact with production. That usually means two jobs at once: getting the model to work, and getting it to answer in 13 ms on a real cluster that someone is trying to break with Chaos Mesh.
+I build ML systems and make them survive production. Lately that means Kubernetes reliability: predicting failures, finding root causes, and proving the model actually works on a real cluster.
 
-The thing I care about most is knowing whether a result is real. My repos have a `limitations.md` and a section for the experiments that failed, because a number you cannot defend is worse than no number. When my root-cause model collapsed from 73% to 0%, I had a confident theory about which component broke. It took an A/B to prove me wrong: the culprit was numerical instability in the GIB loss.
+I care about whether a result holds up. My repos ship their limitations next to their numbers.
 
 ## Reliability & AIOps
 
@@ -20,7 +21,7 @@ The thing I care about most is knowing whether a result is real. My repos have a
 |---|---|
 | [otel-sre-copilot](https://github.com/Wassbdr/otel-sre-copilot) | LangGraph agent that investigates Kubernetes incidents through OpenTelemetry (Prometheus, Tempo, Loki). Ships with a reproducible eval harness against 3 baselines, with Chaos Mesh as ground truth. The full benchmark run is still pending. |
 | [matrix_simple](https://github.com/Wassbdr/matrix_simple) | STA, spatio-temporal GNN for microservice root cause analysis. Selects k suspect nodes first, which drops the cost from O(N²) to O(N+k²). Latency stays flat as the graph grows. |
-| [ewat](https://github.com/Wassbdr/ewat) | Early warning and anomaly typing on K8s microservices. Separates benign drift from real anomalies, then learns a fault ontology via transfer entropy. Validated on a live 9-node RKE2 cluster. |
+| [ewat](https://github.com/Wassbdr/ewat) | Early warning and anomaly typing on K8s microservices. Separates benign drift from real anomalies, then learns a fault ontology. Validated on a live 9-node cluster. |
 | [slcmca](https://github.com/Wassbdr/slcmca) | slacheck. Answers "what SLA can I actually commit to?" for a multi-cloud microservice app, by walking the Datadog APM call graph and finding the critical path. Catches SLOs you promised but cannot hit. |
 | [mlops2](https://github.com/Wassbdr/mlops2) | End-to-end MLOps pipeline: scikit-learn to FastAPI to Docker to a VM, deployed by GitHub Actions. |
 
